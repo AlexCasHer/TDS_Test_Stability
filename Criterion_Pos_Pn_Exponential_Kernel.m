@@ -187,10 +187,7 @@ for p1 = p1_min:paso_p1:p1_max
                 end
             end
         end
-
-      
-
-
+    
         %% Terms Tn, Sn and Dn:
         Tn = zeros(n*nx);
         Sn = zeros(n*nx);
@@ -211,9 +208,6 @@ for p1 = p1_min:paso_p1:p1_max
                 Dn(j*nx+1:(j+1)*nx,k*nx+1:(k+1)*nx) = B1'*(Djk+DjkB')*B1;
             end
         end
-
-                
-
 
         %% Term IIn:
         IIn = 1/h*kron(diag(2*(0:n-1)+1),eye(nx));

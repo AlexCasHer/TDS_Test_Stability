@@ -41,10 +41,6 @@ for p1 = p1_min:paso_p1:p1_max
 
         % System parameters: 
         % x'(t) = A0x(t)+A1x(t-h)+G*int_{-h}^{0}x(t-\tau) d\tau
-% %         h  = 0.1;
-% %         A0 = p1;
-% %         A1 = p2;
-% %         G  = 1;
         h     = p1;
         gamma = p2;
 
@@ -65,7 +61,6 @@ for p1 = p1_min:paso_p1:p1_max
         nx = length(A0);
         In = eye(nx);
         I0 = zeros(nx);
-
 
         % ====================== DELAY LYAPUNOV MATRIX: CONSTANT KERNEL ======================
         % Matrix L:
@@ -111,6 +106,7 @@ for p1 = p1_min:paso_p1:p1_max
                 Di(i,i) = 1/D(i,i);
             end
         end
+
 
         % =========================  STABILITY TEST =========================
 
@@ -204,7 +200,6 @@ for p1 = p1_min:paso_p1:p1_max
         %% Terms Sn:
 
         % Recursive relations for LambdaB=Zeta
-
         Zeta = cell(n);
         for j=1:n
             for k=1:n
@@ -290,7 +285,6 @@ for p1 = p1_min:paso_p1:p1_max
 
         % Recursive relations for DBar:
         DBar = cell(n);
-
         for j=1:n
             for k=1:n
                 DBar{j,k} = -(-1)^(j-1)*Di^2*Gamma{k}*Gamma{j}*expm(-h*D);
