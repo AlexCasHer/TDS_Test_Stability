@@ -1,5 +1,5 @@
 %% PROGRAM: Legendre approximation-based stability test for distributed delay systems 
-% CASE: Distribuited delay with Exponential Kernel.
+% CASE: Distribuited delay with Constant Kernel.
 % PDh Student: Alejandro Castaño Hernández
 % Advisors: Dr. Mathieu Bajodek / Dra. Sabine Mondié
 
