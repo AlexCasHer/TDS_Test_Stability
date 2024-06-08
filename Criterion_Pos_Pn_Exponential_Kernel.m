@@ -35,7 +35,6 @@ digits(32);
 % Definition of the order n:
 n  = 4;      % Degree of the Legendre polynomial (polynomial approximation).  
 
-%% PROGRAMA PRINCIPAL:
 for p1 = p1_min:paso_p1:p1_max
     for p2 = p2_min:paso_p2:p2_max
 
