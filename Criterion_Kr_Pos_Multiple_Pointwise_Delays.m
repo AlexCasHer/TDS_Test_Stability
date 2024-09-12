@@ -1,5 +1,5 @@
 %% PROGRAM: Finite Lyapunov Stability Test for a class of Linear Systems with Pointwise Delays
-% Author/Developer: Alejandro CastaÒo Hern·ndez
+% Author/Developer: Alejandro Casta√±o Hern√°ndez
 
 %% Clean the workspace 
 clc, clear, hold on, format long
