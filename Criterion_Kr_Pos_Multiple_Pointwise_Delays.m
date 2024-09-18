@@ -23,12 +23,9 @@ for PARAMETERS=1:1
         step_p2 = (p2_max - p2_min)/points;
 end
 
-% Storage vectors
-for ALMACENAMIENTO=1:1
-    p1_vector = zeros();
-    p2_vector = zeros();
-    indice    = 1;
-end
+%Storage vectors
+index  = 1;
+Stable = zeros(1,2);
 
 % Degree of the approximation: order r
 r       = 10;            
@@ -206,13 +203,11 @@ for p1 = p1_min:step_p1:p1_max
 
             % =====================  STABILITY CONDITION =====================
             % Positivity test: Kr>0
-            [Rx, Px] = chol(Kr);
+            [Rx, Px] = chol( double(Kr) );
     
             if(Px == 0)
-                p1_vector(indice) = p1;
-                p2_vector(indice) = p2;
-                indice            = indice + 1;
-    
+                Stable(index,:) = [p1;p2];
+                index = index + 1;
             end
 
            
@@ -221,9 +216,8 @@ for p1 = p1_min:step_p1:p1_max
     end
 end
 
-
 % Visualization of the stability map:
-plot(p1_vector,p2_vector,... 
+plot(Stable(:,1),Stable(:,2),... 
     '.',...
     'color',[0 0 1],...
     'MarkerSize',6,...
