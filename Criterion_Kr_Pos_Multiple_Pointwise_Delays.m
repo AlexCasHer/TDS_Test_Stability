@@ -41,8 +41,8 @@ for p1 = p1_min:step_p1:p1_max
 
         % System parameters: x'(t) = A0x(t-h0)+A1x(t-h1)+A2x(t-h2)
         h0 = 0;
-        h1 =  p1;
-        h2 =  p2;
+        h1 = p1;
+        h2 = p2;
 
 
         A0 = -1.3;
@@ -222,14 +222,14 @@ for p1 = p1_min:step_p1:p1_max
 end
 
 
+% Visualization of the stability map:
 plot(p1_vector,p2_vector,... 
     '.',...
-    'color',[0 1 0],...
+    'color',[0 0 1],...
     'MarkerSize',6,...
     'Marker','.')
-
-xlabel('h_1')
-ylabel('h_2')
+xlabel('$p_{1}$','fontsize',14,'interpreter','latex')
+ylabel('$p_{2}$','fontsize',14,'interpreter','latex','Rotation',0)
 
 grid on
 box on
