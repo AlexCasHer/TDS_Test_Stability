@@ -36,8 +36,8 @@ val_exp = 10;
 
 
 %% MAIN PROGRAM FOR STABILITY TEST.
-for p1 = step_p1:step_p1:p1_max
-    for p2 = step_p2:step_p2:p2_max
+for p1 = p1_min:step_p1:p1_max
+    for p2 = p2_min:step_p2:p2_max
 
         % System parameters: x'(t) = A0x(t-h0)+A1x(t-h1)+A2x(t-h2)
         h0 = 0;
@@ -95,12 +95,12 @@ for p1 = step_p1:step_p1:p1_max
 
             % First Block of Matrix L:
             for i=1:m
-                L((i-1)*n^2+1:i*n^2,(i-1)*n^2+1:(m+i)*n^2)=L_Main_B1;
+                L((i-1)*n^2+1:i*n^2,(i-1)*n^2+1:(m+i)*n^2) = L_Main_B1;
             end
 
             % Second Block of Matrix L:
             for i=m:2*m-1
-                L(i*n^2+1:(i+1)*n^2,(i-m)*n^2+1:(i+1)*n^2)=L_Main_B2;
+                L(i*n^2+1:(i+1)*n^2,(i-m)*n^2+1:(i+1)*n^2) = L_Main_B2;
             end
 
             % ========== Matrix M ==========
@@ -228,8 +228,8 @@ plot(p1_vector,p2_vector,...
     'MarkerSize',6,...
     'Marker','.')
 
-xlabel('h1')
-ylabel('h2')
+xlabel('h_1')
+ylabel('h_2')
 
 grid on
 box on
